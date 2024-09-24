@@ -35,7 +35,7 @@ class PBString extends PBScalar
 			$string .= $this->base128->set_value($rec << 3 | $this->wired_type);
 		}
 
-		$string .= $this->base128->set_value(strlen($this->value));
+		$string .= $this->base128->set_value(strlen($this->value ? $this->value : ''));
 		$string .= $this->value;
 
 		return $string;
